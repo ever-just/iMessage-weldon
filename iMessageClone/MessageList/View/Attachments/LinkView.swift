@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import Nuke
-import NukeUI
 import StreamChat
 import StreamChatSwiftUI
 
@@ -15,6 +13,7 @@ struct LinkView: View {
     
     @Injected(\.colors) var colors
     @Injected(\.fonts) var fonts
+    @Injected(\.utils) var utils
     
     var linkAttachment: ChatMessageLinkAttachment
     var width: CGFloat
@@ -24,11 +23,24 @@ struct LinkView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             if let preview = linkAttachment.previewURL {
-                LazyImage(source: preview)
-                    .onDisappear(.cancel)
-                    .processors([ImageProcessors.Resize(width: width)])
-                    .priority(.high)
-                    .frame(width: width - 2 * padding, height: (width - 2 * padding) / 2)
+                AsyncImage(url: preview) { phase in
+                    switch phase {
+                    case .empty:
+                        Rectangle()
+                            .fill(Color.gray.opacity(0.2))
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    case .failure:
+                        Rectangle()
+                            .fill(Color.gray.opacity(0.2))
+                    @unknown default:
+                        EmptyView()
+                    }
+                }
+                .frame(width: width - 2 * padding, height: (width - 2 * padding) / 2)
+                .clipped()
             }
             
             VStack(alignment: .leading, spacing: 4) {
@@ -39,12 +51,10 @@ struct LinkView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 
-                if let baseUrl = linkAttachment.originalURL {
-                    Text("\(baseUrl)")
-                        .font(fonts.footnote)
-                        .foregroundColor(.secondary)
-                        .lineLimit(1)
-                }
+                Text("\(linkAttachment.originalURL)")
+                    .font(fonts.footnote)
+                    .foregroundColor(.secondary)
+                    .lineLimit(1)
              }
             .padding(.vertical, 12)
             .padding(.horizontal, padding)

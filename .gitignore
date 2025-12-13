@@ -81,3 +81,9 @@ playground.xcworkspace
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,swiftpackagemanager,xcode,macos
+
+# Secrets - keep credentials out of version control
+Secrets.plist
+iMessageClone/Config/Secrets.plist
+
+node_modules/

@@ -15,5 +15,18 @@ class iMessageViewFactory: ViewFactory {
     @Injected(\.chatClient) var chatClient: ChatClient
     
     var channelId: ChannelId?
+    var isStandardUser: Bool = false
     
+}
+
+class StandardUserViewFactory: iMessageViewFactory {
+    
+    override init() {
+        super.init()
+        isStandardUser = true
+    }
+    
+    func makeChannelHeaderViewModifier(for channel: ChatChannel) -> StandardUserHeaderModifier {
+        StandardUserHeaderModifier(channel: channel)
+    }
 }

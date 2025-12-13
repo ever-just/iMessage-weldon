@@ -19,7 +19,16 @@ class MessageListHeaderViewModel: ObservableObject {
     
     init(channel: ChatChannel) {
         headerImage = ChannelHeaderLoader().image(for: channel)
-        channelName = utils.channelNamer(channel, chatClient.currentUserId ?? "")
+        
+        // Use channel name if set, otherwise use the other member's name
+        if let name = channel.name, !name.isEmpty {
+            channelName = name
+        } else {
+            // Get the other member's name (not the current user)
+            let currentUserId = chatClient.currentUserId ?? ""
+            let otherMember = channel.lastActiveMembers.first { $0.id != currentUserId }
+            channelName = otherMember?.name ?? utils.channelNamer(channel, currentUserId)
+        }
     }
     
 }

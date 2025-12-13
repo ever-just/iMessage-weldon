@@ -28,9 +28,18 @@ extension iMessageViewFactory {
         trailingSwipeLeftButtonTapped: @escaping (ChatChannel) -> Void,
         leadingSwipeButtonTapped: @escaping (ChatChannel) -> Void
     ) -> some View {
+        // Resolve channel name - use channel name if set, otherwise get other member's name
+        var resolvedName = channelName
+        if channelName.isEmpty {
+            let currentUserId = chatClient.currentUserId ?? ""
+            if let otherMember = channel.lastActiveMembers.first(where: { $0.id != currentUserId }) {
+                resolvedName = otherMember.name ?? otherMember.id
+            }
+        }
+        
         let listItem = iMessageChannelListItem(
             channel: channel,
-            channelName: channelName,
+            channelName: resolvedName,
             avatar: avatar,
             channelDestination: channelDestination,
             selectedChannel: selectedChannel

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8AB042602EECFB8B0000CA9C /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB042612EECFB8B0000CA9D /* Secrets.plist */; };
+		8AB042362EECFB8B0000CA85 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042352EECFB8B0000CA85 /* AppConfig.swift */; };
+		8AB042372EECFB8B0000CA86 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042382EECFB8B0000CA86 /* AuthManager.swift */; };
+		8AB042392EECFB8B0000CA87 /* UserSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB0423A2EECFB8B0000CA87 /* UserSwitcherView.swift */; };
+		8AB0423B2EECFB8B0000CA88 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB0423C2EECFB8B0000CA88 /* RootView.swift */; };
+		8AB0423D2EECFB8B0000CA89 /* StandardUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB0423E2EECFB8B0000CA89 /* StandardUserView.swift */; };
+		8AB0423F2EECFB8B0000CA8A /* AdminChannelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042402EECFB8B0000CA8A /* AdminChannelListView.swift */; };
+		8AB042522EECFB8B0000CA92 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8AB042512EECFB8B0000CA91 /* Supabase */; };
+		8AB042532EECFB8B0000CA93 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042542EECFB8B0000CA94 /* SupabaseClient.swift */; };
+		8AB042552EECFB8B0000CA95 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042562EECFB8B0000CA96 /* AuthView.swift */; };
+		8AB042582EECFB8B0000CA98 /* StandardUserChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042592EECFB8B0000CA99 /* StandardUserChannelInfoView.swift */; };
+		8AB0425A2EECFB8B0000CA9A /* StandardUserHeaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB0425B2EECFB8B0000CA9B /* StandardUserHeaderModifier.swift */; };
 		AC02EB4B27A95CED001C4480 /* iMessageChannelListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02EB4A27A95CED001C4480 /* iMessageChannelListHeader.swift */; };
 		AC02EB4D27A95D7C001C4480 /* iMessageChannelListHeaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02EB4C27A95D7C001C4480 /* iMessageChannelListHeaderModifier.swift */; };
 		AC24F7C0286C8F30009FBF7E /* LeadingComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24F7BF286C8F30009FBF7E /* LeadingComposerView.swift */; };
@@ -35,6 +47,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8AB042612EECFB8B0000CA9D /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		8AB042622EECFB8B0000CA9E /* Secrets.template.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.template.plist; sourceTree = "<group>"; };
+		8AB042352EECFB8B0000CA85 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		8AB042382EECFB8B0000CA86 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		8AB0423A2EECFB8B0000CA87 /* UserSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwitcherView.swift; sourceTree = "<group>"; };
+		8AB0423C2EECFB8B0000CA88 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		8AB0423E2EECFB8B0000CA89 /* StandardUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardUserView.swift; sourceTree = "<group>"; };
+		8AB042402EECFB8B0000CA8A /* AdminChannelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminChannelListView.swift; sourceTree = "<group>"; };
+		8AB042542EECFB8B0000CA94 /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
+		8AB042562EECFB8B0000CA96 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		8AB042592EECFB8B0000CA99 /* StandardUserChannelInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardUserChannelInfoView.swift; sourceTree = "<group>"; };
+		8AB0425B2EECFB8B0000CA9B /* StandardUserHeaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardUserHeaderModifier.swift; sourceTree = "<group>"; };
 		AC02EB4A27A95CED001C4480 /* iMessageChannelListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageChannelListHeader.swift; sourceTree = "<group>"; };
 		AC02EB4C27A95D7C001C4480 /* iMessageChannelListHeaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageChannelListHeaderModifier.swift; sourceTree = "<group>"; };
 		AC24F7BF286C8F30009FBF7E /* LeadingComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingComposerView.swift; sourceTree = "<group>"; };
@@ -68,12 +92,63 @@
 			files = (
 				AC5277EA27AC45620065A092 /* OrderedCollections in Frameworks */,
 				AC9B37A727A46526004765A9 /* StreamChatSwiftUI in Frameworks */,
+				8AB042522EECFB8B0000CA92 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AB042412EECFB8B0000CA8B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8AB042422EECFB8B0000CA8C /* Authentication */,
+				8AB042432EECFB8B0000CA8D /* Views */,
+				8AB042572EECFB8B0000CA97 /* Supabase */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8AB042422EECFB8B0000CA8C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8AB042382EECFB8B0000CA86 /* AuthManager.swift */,
+				8AB0423A2EECFB8B0000CA87 /* UserSwitcherView.swift */,
+				8AB042562EECFB8B0000CA96 /* AuthView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		8AB042432EECFB8B0000CA8D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8AB0423C2EECFB8B0000CA88 /* RootView.swift */,
+				8AB0423E2EECFB8B0000CA89 /* StandardUserView.swift */,
+				8AB042402EECFB8B0000CA8A /* AdminChannelListView.swift */,
+				8AB042592EECFB8B0000CA99 /* StandardUserChannelInfoView.swift */,
+				8AB0425B2EECFB8B0000CA9B /* StandardUserHeaderModifier.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8AB042572EECFB8B0000CA97 /* Supabase */ = {
+			isa = PBXGroup;
+			children = (
+				8AB042542EECFB8B0000CA94 /* SupabaseClient.swift */,
+			);
+			path = Supabase;
+			sourceTree = "<group>";
+		};
+		8AB042632EECFB8B0000CA9F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8AB042352EECFB8B0000CA85 /* AppConfig.swift */,
+				8AB042612EECFB8B0000CA9D /* Secrets.plist */,
+				8AB042622EECFB8B0000CA9E /* Secrets.template.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		AC24F7BE286C8F23009FBF7E /* Composer */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +230,8 @@
 		AC9B379627A46350004765A9 /* iMessageClone */ = {
 			isa = PBXGroup;
 			children = (
+				8AB042412EECFB8B0000CA8B /* Core */,
+				8AB042632EECFB8B0000CA9F /* Config */,
 				ACD129C62857264D007E6B97 /* StreamChat */,
 				ACD129C32857261D007E6B97 /* ChannelList */,
 				AC65D05B286C58F900E01779 /* MessageList */,
@@ -259,6 +336,7 @@
 			packageProductDependencies = (
 				AC9B37A627A46526004765A9 /* StreamChatSwiftUI */,
 				AC5277E927AC45620065A092 /* OrderedCollections */,
+				8AB042512EECFB8B0000CA91 /* Supabase */,
 			);
 			productName = iMessageClone;
 			productReference = AC9B379427A46350004765A9 /* iMessageClone.app */;
@@ -272,7 +350,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					AC9B379327A46350004765A9 = {
 						CreatedOnToolsVersion = 13.2;
@@ -291,6 +369,7 @@
 			packageReferences = (
 				AC9B37A527A46526004765A9 /* XCRemoteSwiftPackageReference "stream-chat-swiftui" */,
 				AC5277E827AC45620065A092 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				8AB042502EECFB8B0000CA90 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = AC9B379527A46350004765A9 /* Products */;
 			projectDirPath = "";
@@ -306,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB042602EECFB8B0000CA9C /* Secrets.plist in Resources */,
 				AC9B379F27A46351004765A9 /* Preview Assets.xcassets in Resources */,
 				AC9B379C27A46351004765A9 /* Assets.xcassets in Resources */,
 			);
@@ -318,6 +398,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB042582EECFB8B0000CA98 /* StandardUserChannelInfoView.swift in Sources */,
+				8AB0425A2EECFB8B0000CA9A /* StandardUserHeaderModifier.swift in Sources */,
+				8AB042532EECFB8B0000CA93 /* SupabaseClient.swift in Sources */,
+				8AB042552EECFB8B0000CA95 /* AuthView.swift in Sources */,
+				8AB042372EECFB8B0000CA86 /* AuthManager.swift in Sources */,
+				8AB042392EECFB8B0000CA87 /* UserSwitcherView.swift in Sources */,
+				8AB0423B2EECFB8B0000CA88 /* RootView.swift in Sources */,
+				8AB0423D2EECFB8B0000CA89 /* StandardUserView.swift in Sources */,
+				8AB0423F2EECFB8B0000CA8A /* AdminChannelListView.swift in Sources */,
 				AC4A633C27AC473F00237420 /* PinnedChannelsView.swift in Sources */,
 				AC5277E327AC29010065A092 /* LeadingSwipeAreaView.swift in Sources */,
 				AC9B37A927A466EE004765A9 /* AppDelegate.swift in Sources */,
@@ -331,6 +420,7 @@
 				AC65D064286C5BA200E01779 /* MessageListHeader.swift in Sources */,
 				AC5277DD27AB0D510065A092 /* iMessageChannelListItem.swift in Sources */,
 				AC9B379A27A46350004765A9 /* iMessageChannelList.swift in Sources */,
+				8AB042362EECFB8B0000CA85 /* AppConfig.swift in Sources */,
 				AC5277D927AA84E80065A092 /* iMessageChannelListItemView.swift in Sources */,
 				AC65D06B286C73DF00E01779 /* MessageView.swift in Sources */,
 				AC5277E727AC2CBE0065A092 /* iMessageChannelListViewModel.swift in Sources */,
@@ -380,8 +470,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -401,6 +493,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -441,8 +534,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -455,6 +550,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -469,7 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iMessageClone/Preview Content\"";
-				DEVELOPMENT_TEAM = JY49624W8T;
+				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to send images we need to access them.";
@@ -483,7 +579,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stefanblos.iMessageClone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weldonmakori.imessageclone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -499,7 +595,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iMessageClone/Preview Content\"";
-				DEVELOPMENT_TEAM = JY49624W8T;
+				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to send images we need to access them.";
@@ -513,7 +609,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stefanblos.iMessageClone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weldonmakori.imessageclone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -545,6 +641,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8AB042502EECFB8B0000CA90 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		AC5277E827AC45620065A092 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
@@ -558,12 +662,17 @@
 			repositoryURL = "https://github.com/getstream/stream-chat-swiftui";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.16.0;
+				minimumVersion = 4.64.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8AB042512EECFB8B0000CA91 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AB042502EECFB8B0000CA90 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
 		AC5277E927AC45620065A092 /* OrderedCollections */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AC5277E827AC45620065A092 /* XCRemoteSwiftPackageReference "swift-collections" */;

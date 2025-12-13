@@ -3,6 +3,7 @@
 //  iMessageClone
 //
 //  Created by Stefan Blos on 28.01.22.
+//  Modified for weldon.vip
 //
 
 import SwiftUI
@@ -15,7 +16,7 @@ struct iMessageCloneApp: App {
     
     var body: some Scene {
         WindowGroup {
-            iMessageChannelList(viewFactory: iMessageViewFactory())
+            RootView()
         }
     }
 }
