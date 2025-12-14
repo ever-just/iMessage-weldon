@@ -23,7 +23,7 @@ struct MessageListHeaderModifier: ChatChannelHeaderViewModifier {
                 isVideoSheetShown: $videoScreenShown)
         }
         .sheet(isPresented: $infoScreenShown) {
-            ChatChannelInfoView(channel: channel)
+            CustomChannelInfoView(channel: channel)
         }
         .sheet(isPresented: $videoScreenShown) {
             Text("Video not implemented yet.")

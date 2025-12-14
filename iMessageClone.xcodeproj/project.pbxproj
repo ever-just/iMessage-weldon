@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8AB042602EECFB8B0000CA9C /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB042612EECFB8B0000CA9D /* Secrets.plist */; };
+		751D83C5020CA99181A6B307 /* CustomChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19BD355E402E861F18D8810 /* CustomChannelInfoView.swift */; };
 		8AB042362EECFB8B0000CA85 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042352EECFB8B0000CA85 /* AppConfig.swift */; };
 		8AB042372EECFB8B0000CA86 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042382EECFB8B0000CA86 /* AuthManager.swift */; };
 		8AB042392EECFB8B0000CA87 /* UserSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB0423A2EECFB8B0000CA87 /* UserSwitcherView.swift */; };
@@ -19,6 +19,7 @@
 		8AB042552EECFB8B0000CA95 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042562EECFB8B0000CA96 /* AuthView.swift */; };
 		8AB042582EECFB8B0000CA98 /* StandardUserChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042592EECFB8B0000CA99 /* StandardUserChannelInfoView.swift */; };
 		8AB0425A2EECFB8B0000CA9A /* StandardUserHeaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB0425B2EECFB8B0000CA9B /* StandardUserHeaderModifier.swift */; };
+		8AB042602EECFB8B0000CA9C /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB042612EECFB8B0000CA9D /* Secrets.plist */; };
 		AC02EB4B27A95CED001C4480 /* iMessageChannelListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02EB4A27A95CED001C4480 /* iMessageChannelListHeader.swift */; };
 		AC02EB4D27A95D7C001C4480 /* iMessageChannelListHeaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02EB4C27A95D7C001C4480 /* iMessageChannelListHeaderModifier.swift */; };
 		AC24F7C0286C8F30009FBF7E /* LeadingComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24F7BF286C8F30009FBF7E /* LeadingComposerView.swift */; };
@@ -47,8 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8AB042612EECFB8B0000CA9D /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
-		8AB042622EECFB8B0000CA9E /* Secrets.template.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.template.plist; sourceTree = "<group>"; };
 		8AB042352EECFB8B0000CA85 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		8AB042382EECFB8B0000CA86 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		8AB0423A2EECFB8B0000CA87 /* UserSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwitcherView.swift; sourceTree = "<group>"; };
@@ -59,6 +58,9 @@
 		8AB042562EECFB8B0000CA96 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		8AB042592EECFB8B0000CA99 /* StandardUserChannelInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardUserChannelInfoView.swift; sourceTree = "<group>"; };
 		8AB0425B2EECFB8B0000CA9B /* StandardUserHeaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardUserHeaderModifier.swift; sourceTree = "<group>"; };
+		8AB042612EECFB8B0000CA9D /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		8AB042622EECFB8B0000CA9E /* Secrets.template.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.template.plist; sourceTree = "<group>"; };
+		A19BD355E402E861F18D8810 /* CustomChannelInfoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomChannelInfoView.swift; sourceTree = "<group>"; };
 		AC02EB4A27A95CED001C4480 /* iMessageChannelListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageChannelListHeader.swift; sourceTree = "<group>"; };
 		AC02EB4C27A95D7C001C4480 /* iMessageChannelListHeaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageChannelListHeaderModifier.swift; sourceTree = "<group>"; };
 		AC24F7BF286C8F30009FBF7E /* LeadingComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingComposerView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				8AB042402EECFB8B0000CA8A /* AdminChannelListView.swift */,
 				8AB042592EECFB8B0000CA99 /* StandardUserChannelInfoView.swift */,
 				8AB0425B2EECFB8B0000CA9B /* StandardUserHeaderModifier.swift */,
+				A19BD355E402E861F18D8810 /* CustomChannelInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				AC65D05F286C592200E01779 /* MessageListHeaderViewModel.swift in Sources */,
 				AC24F7C6286CA886009FBF7E /* LinkView.swift in Sources */,
 				AC02EB4D27A95D7C001C4480 /* iMessageChannelListHeaderModifier.swift in Sources */,
+				751D83C5020CA99181A6B307 /* CustomChannelInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
