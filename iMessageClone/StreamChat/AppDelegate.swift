@@ -18,7 +18,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     var chatClient: ChatClient = {
         var config = ChatClientConfig(apiKey: .init(AppConfig.streamAPIKey))
-        config.applicationGroupIdentifier = "group.vip.weldon.iMessageClone"
+        config.applicationGroupIdentifier = "group.app.justchat"
         
         let client = ChatClient(config: config)
         return client

@@ -14,7 +14,7 @@ A private iMessage-style chat application built with SwiftUI and Stream Chat SDK
 
 ## Requirements
 
-- iOS 16.0+
+- iOS 15.2+
 - Xcode 15.0+
 - Swift 5.9+
 - Stream Chat account
