@@ -183,26 +183,27 @@ _None identified_
 
 ### 🟡 Medium Priority Issues
 
-| # | Issue | File | Impact | Solution |
-|---|-------|------|--------|----------|
-| 1 | **Duplicate AppConfig** | `iMessageClone/AppConfig.swift` | Confusion, potential conflicts | Delete file |
-| 2 | **Misnamed file** | `UserSwitcherView.swift` contains `ProfileView` | Confusing for developers | Rename to `ProfileView.swift` |
-| 3 | **Force unwrap URL** | `SupabaseClient.swift:15` | Crash if config invalid | Add guard statement |
-| 4 | **Unowned self** | `iMessageViewFactory+MessageList.swift:53` | Potential crash | Use `[weak self]` |
-| 5 | **Duplicated sign-out logic** | `StandardUserChannelInfoView` & `CustomChannelInfoView` | Code duplication | Extract shared component |
-| 6 | **Outdated docs** | `docs/REPO_INDEX.md`, `docs/PRD.md` | Misleading information | Update both files |
-| 7 | **No automated tests** | Project-wide | No regression protection | Add XCTest targets |
+| # | Issue | File | Status |
+|---|-------|------|--------|
+| 1 | ~~Duplicate AppConfig~~ | `iMessageClone/AppConfig.swift` | ✅ Fixed |
+| 2 | ~~Misnamed file~~ | `ProfileView.swift` | ✅ Fixed |
+| 3 | ~~Force unwrap URL~~ | `SupabaseClient.swift` | ✅ Fixed |
+| 4 | ~~Unowned self~~ | `iMessageViewFactory+MessageList.swift` | ✅ Fixed |
+| 5 | Duplicated sign-out logic | `StandardUserChannelInfoView` & `CustomChannelInfoView` | ⬜ Pending |
+| 6 | ~~Outdated REPO_INDEX.md~~ | `docs/REPO_INDEX.md` | ✅ Fixed |
+| 6b | Outdated PRD.md | `docs/PRD.md` | ⬜ Pending |
+| 7 | No automated tests | Project-wide | ⬜ Pending |
 
 ### 🟢 Low Priority / Code Quality
 
-| # | Issue | Files | Solution |
-|---|-------|-------|----------|
-| 8 | Deprecated `PreviewProvider` | 3 files | Update to `#Preview` macro |
-| 9 | Deprecated `autocapitalization` | `AuthView.swift` | Use `.textInputAutocapitalization()` |
-| 10 | Deprecated `onChange` | `StandardUserView.swift` | Use iOS 17+ syntax |
-| 11 | TODO: Forgot password | `AuthView.swift:113` | Implement or remove |
-| 12 | No scripts README | `scripts/` | Add documentation |
-| 13 | No CI/CD | Project-wide | Add GitHub Actions |
+| # | Issue | Files | Status |
+|---|-------|-------|--------|
+| 8 | ~~Deprecated PreviewProvider~~ | 3 files | ✅ Fixed |
+| 9 | ~~Deprecated autocapitalization~~ | `AuthView.swift` | ✅ Fixed |
+| 10 | Deprecated `onChange` | `StandardUserView.swift` | ⚠️ Kept (iOS 16 compat) |
+| 11 | TODO: Forgot password | `AuthView.swift:113` | ⬜ Pending |
+| 12 | ~~No scripts README~~ | `scripts/README.md` | ✅ Fixed |
+| 13 | No CI/CD | Project-wide | ⬜ Pending |
 
 ---
 
@@ -319,34 +320,34 @@ iMessage-weldon/
 
 ### 🔴 Immediate (Before Next Commit)
 
-| # | Task | File | Priority |
-|---|------|------|----------|
-| 1 | Delete duplicate AppConfig | `iMessageClone/AppConfig.swift` | High |
-| 2 | Rename UserSwitcherView to ProfileView | `Core/Authentication/UserSwitcherView.swift` | High |
-| 3 | Fix force unwrap | `Core/Supabase/SupabaseClient.swift:15` | High |
-| 4 | Fix unowned self | `StreamChat/iMessageViewFactory+MessageList.swift:53` | High |
+| # | Task | File | Status |
+|---|------|------|--------|
+| 1 | ~~Delete duplicate AppConfig~~ | `iMessageClone/AppConfig.swift` | ✅ Done |
+| 2 | ~~Rename UserSwitcherView to ProfileView~~ | `Core/Authentication/ProfileView.swift` | ✅ Done |
+| 3 | ~~Fix force unwrap~~ | `Core/Supabase/SupabaseClient.swift` | ✅ Done |
+| 4 | ~~Fix unowned self~~ | `StreamChat/iMessageViewFactory+MessageList.swift` | ✅ Done |
 
 ### 🟡 Short-term (This Week)
 
-| # | Task | Details |
-|---|------|---------|
-| 5 | Update REPO_INDEX.md | Reflect current Core/ structure |
-| 6 | Update PRD.md | Mark completed tasks |
-| 7 | Add scripts/README.md | Document how to use scripts |
-| 8 | Extract SignOutButton component | Remove duplication |
-| 9 | Update deprecated APIs | PreviewProvider, autocapitalization, onChange |
+| # | Task | Details | Status |
+|---|------|---------|--------|
+| 5 | ~~Update REPO_INDEX.md~~ | Reflect current Core/ structure | ✅ Done |
+| 6 | Update PRD.md | Mark completed tasks | ⬜ Pending |
+| 7 | ~~Add scripts/README.md~~ | Document how to use scripts | ✅ Done |
+| 8 | Extract SignOutButton component | Remove duplication | ⬜ Pending |
+| 9 | ~~Update deprecated APIs~~ | PreviewProvider, autocapitalization | ✅ Done |
 
 ### 🟢 Long-term (Backlog)
 
-| # | Task | Details |
-|---|------|---------|
-| 10 | Add XCTest target | Basic auth tests |
-| 11 | Add UI tests | Auth flow, messaging |
-| 12 | Implement forgot password | AuthView TODO |
-| 13 | Set up GitHub Actions CI | Auto-build on PR |
-| 14 | Restructure to proposed layout | Feature-based organization |
-| 15 | Add token refresh logic | AuthManager enhancement |
-| 16 | Add auth rate limiting | Security hardening |
+| # | Task | Details | Status |
+|---|------|---------|--------|
+| 10 | Add XCTest target | Basic auth tests | ⬜ Pending |
+| 11 | Add UI tests | Auth flow, messaging | ⬜ Pending |
+| 12 | Implement forgot password | AuthView TODO | ⬜ Pending |
+| 13 | Set up GitHub Actions CI | Auto-build on PR | ⬜ Pending |
+| 14 | Restructure to proposed layout | Feature-based organization | ⬜ Pending |
+| 15 | Add token refresh logic | AuthManager enhancement | ⬜ Pending |
+| 16 | Add auth rate limiting | Security hardening | ⬜ Pending |
 
 ---
 
