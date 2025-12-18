@@ -11,7 +11,12 @@ import Supabase
 // MARK: - Supabase Client
 // Credentials are loaded from Secrets.plist via AppConfig
 
-let supabase = SupabaseClient(
-    supabaseURL: URL(string: AppConfig.supabaseURL)!,
-    supabaseKey: AppConfig.supabaseAnonKey
-)
+let supabase: SupabaseClient = {
+    guard let url = URL(string: AppConfig.supabaseURL) else {
+        fatalError("Invalid Supabase URL in Secrets.plist. Please check your configuration.")
+    }
+    return SupabaseClient(
+        supabaseURL: url,
+        supabaseKey: AppConfig.supabaseAnonKey
+    )
+}()

@@ -50,12 +50,12 @@ extension iMessageViewFactory {
         shouldScroll: Bool,
         removeAttachmentWithId: @escaping (String) -> Void
     ) -> some View {
-        ComposerInputView(input: text) { [unowned self] message in
-            guard let channelId = channelId else {
+        ComposerInputView(input: text) { [weak self] message in
+            guard let self = self, let channelId = self.channelId else {
                 return
             }
             
-            chatClient
+            self.chatClient
                 .channelController(for: channelId)
                 .createNewMessage(text: message)
         }
