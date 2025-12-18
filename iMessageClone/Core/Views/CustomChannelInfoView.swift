@@ -13,7 +13,6 @@ struct CustomChannelInfoView: View {
     let channel: ChatChannel
     @ObservedObject var authManager = AuthManager.shared
     @Environment(\.dismiss) var dismiss
-    @State private var isSigningOut = false
     
     private var isAdmin: Bool {
         authManager.currentUser?.id == AppConfig.adminUserId
@@ -81,15 +80,7 @@ struct CustomChannelInfoView: View {
                 
                 // Sign Out Section
                 Section {
-                    Button(role: .destructive) {
-                        signOut()
-                    } label: {
-                        HStack {
-                            Image(systemName: "rectangle.portrait.and.arrow.right")
-                            Text("Sign Out")
-                        }
-                    }
-                    .disabled(isSigningOut)
+                    SignOutButton()
                 }
             }
             .navigationTitle("Chat Info")
@@ -100,27 +91,6 @@ struct CustomChannelInfoView: View {
                         dismiss()
                     }
                 }
-            }
-            .overlay {
-                if isSigningOut {
-                    Color.black.opacity(0.3)
-                        .ignoresSafeArea()
-                    ProgressView("Signing out...")
-                        .padding()
-                        .background(Color(.systemBackground))
-                        .cornerRadius(10)
-                }
-            }
-        }
-    }
-    
-    private func signOut() {
-        isSigningOut = true
-        Task {
-            await authManager.signOut()
-            await MainActor.run {
-                isSigningOut = false
-                dismiss()
             }
         }
     }

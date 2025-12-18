@@ -1,8 +1,8 @@
 # iMessage Clone for Weldon - Product Requirements Document
 
 **Project Name:** weldon.vip  
-**Version:** 1.0  
-**Last Updated:** December 12, 2024  
+**Version:** 1.1  
+**Last Updated:** December 18, 2024  
 **Author:** Weldon (Admin)
 
 ---
@@ -78,13 +78,13 @@ Create a streamlined, iMessage-inspired communication platform where:
 ### 5.1 Technology Stack
 | Layer | Technology |
 |-------|------------|
-| Platform | iOS 15+ |
-| Language | Swift 5.5+ |
+| Platform | iOS 16+ |
+| Language | Swift 5.9+ |
 | UI Framework | SwiftUI |
-| Chat Backend | GetStream.io Chat SDK |
-| Authentication | Firebase Auth / Sign in with Apple |
+| Chat Backend | GetStream.io Chat SDK (StreamChatSwiftUI 4.94.0) |
+| Authentication | Supabase Auth (email/password) |
 | Push Notifications | APNs via Stream |
-| Storage | Stream (messages) + Keychain (local tokens) |
+| Storage | Stream (messages) + Supabase (auth) + Keychain (local tokens) |
 
 ### 5.2 Stream Chat Architecture
 ```
@@ -220,40 +220,40 @@ View Channel List → Select Conversation → Message User
 
 # Development Roadmap
 
-## Phase 1: Foundation (Week 1-2)
+## Phase 1: Foundation (Week 1-2) ✅
 | Task | Priority | Status |
 |------|----------|--------|
-| Set up Stream Chat account & API keys | P0 | ⬜ |
-| Configure Stream roles (admin, user) | P0 | ⬜ |
-| Implement anonymous user creation | P0 | ⬜ |
+| Set up Stream Chat account & API keys | P0 | ✅ |
+| Configure Stream roles (admin, user) | P0 | ✅ |
+| Implement anonymous user creation | P0 | ✅ |
 | Create basic chat UI (existing repo) | P0 | ✅ |
-| Connect anonymous user to admin channel | P0 | ⬜ |
+| Connect anonymous user to admin channel | P0 | ✅ |
 
-## Phase 2: Authentication (Week 2-3)
+## Phase 2: Authentication (Week 2-3) ✅
 | Task | Priority | Status |
 |------|----------|--------|
-| Integrate Sign in with Apple | P0 | ⬜ |
-| Implement email/password auth (optional) | P2 | ⬜ |
-| Create profile/settings screen | P1 | ⬜ |
-| Link anonymous messages to auth account | P0 | ⬜ |
-| Token management & refresh | P0 | ⬜ |
+| Integrate Sign in with Apple | P0 | ⬜ (using email/password instead) |
+| Implement email/password auth (optional) | P2 | ✅ (Supabase) |
+| Create profile/settings screen | P1 | ✅ |
+| Link anonymous messages to auth account | P0 | ⬜ (not implemented) |
+| Token management & refresh | P0 | ✅ (JWT generation) |
 
-## Phase 3: Admin Experience (Week 3-4)
+## Phase 3: Admin Experience (Week 3-4) ✅
 | Task | Priority | Status |
 |------|----------|--------|
-| Admin authentication flow | P0 | ⬜ |
-| Channel list for all user conversations | P0 | ⬜ |
-| User identification (anon vs auth) | P1 | ⬜ |
-| Pin/Archive channel actions | P2 | ⬜ |
+| Admin authentication flow | P0 | ✅ |
+| Channel list for all user conversations | P0 | ✅ |
+| User identification (anon vs auth) | P1 | ✅ |
+| Pin/Archive channel actions | P2 | ✅ |
 | Search functionality | P2 | ⬜ |
 
 ## Phase 4: Polish & Launch (Week 4-5)
 | Task | Priority | Status |
 |------|----------|--------|
 | Push notification setup (APNs) | P0 | ⬜ |
-| Error handling & edge cases | P0 | ⬜ |
-| Loading states & empty states | P1 | ⬜ |
-| App icon & launch screen | P1 | ⬜ |
+| Error handling & edge cases | P0 | ✅ |
+| Loading states & empty states | P1 | ✅ |
+| App icon & launch screen | P1 | ✅ |
 | TestFlight beta testing | P0 | ⬜ |
 | App Store submission | P0 | ⬜ |
 

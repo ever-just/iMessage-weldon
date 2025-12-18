@@ -189,9 +189,9 @@ _None identified_
 | 2 | ~~Misnamed file~~ | `ProfileView.swift` | ✅ Fixed |
 | 3 | ~~Force unwrap URL~~ | `SupabaseClient.swift` | ✅ Fixed |
 | 4 | ~~Unowned self~~ | `iMessageViewFactory+MessageList.swift` | ✅ Fixed |
-| 5 | Duplicated sign-out logic | `StandardUserChannelInfoView` & `CustomChannelInfoView` | ⬜ Pending |
+| 5 | ~~Duplicated sign-out logic~~ | `SignOutButton.swift` extracted | ✅ Fixed |
 | 6 | ~~Outdated REPO_INDEX.md~~ | `docs/REPO_INDEX.md` | ✅ Fixed |
-| 6b | Outdated PRD.md | `docs/PRD.md` | ⬜ Pending |
+| 6b | ~~Outdated PRD.md~~ | `docs/PRD.md` | ✅ Fixed |
 | 7 | No automated tests | Project-wide | ⬜ Pending |
 
 ### 🟢 Low Priority / Code Quality
@@ -332,9 +332,9 @@ iMessage-weldon/
 | # | Task | Details | Status |
 |---|------|---------|--------|
 | 5 | ~~Update REPO_INDEX.md~~ | Reflect current Core/ structure | ✅ Done |
-| 6 | Update PRD.md | Mark completed tasks | ⬜ Pending |
+| 6 | ~~Update PRD.md~~ | Mark completed tasks | ✅ Done |
 | 7 | ~~Add scripts/README.md~~ | Document how to use scripts | ✅ Done |
-| 8 | Extract SignOutButton component | Remove duplication | ⬜ Pending |
+| 8 | ~~Extract SignOutButton component~~ | Remove duplication | ✅ Done |
 | 9 | ~~Update deprecated APIs~~ | PreviewProvider, autocapitalization | ✅ Done |
 
 ### 🟢 Long-term (Backlog)
