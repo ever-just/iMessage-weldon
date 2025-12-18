@@ -58,34 +58,18 @@ struct ComposerInputView: View {
     }
 }
 
-struct ComposerInputView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ComposerInputView(input: .constant("")) { message in
-                print("Yes")
-            }
-            .padding()
-            .previewLayout(.fixed(width: 360, height: 100.0))
-            
-            ComposerInputView(input: .constant("This is my message to you")) { message in
-                print("Yes")
-            }
-            .padding()
-            .previewLayout(.fixed(width: 360, height: 100.0))
-            
-            ComposerInputView(input: .constant("")) { message in
-                print("Yes")
-            }
-            .padding()
-            .preferredColorScheme(.dark)
-            .previewLayout(.fixed(width: 360, height: 100.0))
-            
-            ComposerInputView(input: .constant("This is my message to you")) { message in
-                print("Yes")
-            }
-            .padding()
-            .preferredColorScheme(.dark)
-            .previewLayout(.fixed(width: 360, height: 100.0))
-        }
-    }
+#Preview("Empty") {
+    ComposerInputView(input: .constant("")) { _ in }
+        .padding()
+}
+
+#Preview("With Text") {
+    ComposerInputView(input: .constant("This is my message to you")) { _ in }
+        .padding()
+}
+
+#Preview("Dark Mode") {
+    ComposerInputView(input: .constant("")) { _ in }
+        .padding()
+        .preferredColorScheme(.dark)
 }

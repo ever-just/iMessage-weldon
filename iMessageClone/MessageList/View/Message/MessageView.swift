@@ -33,17 +33,15 @@ struct MessageView: View {
     }
 }
 
-struct MessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MessageView(message: "This is a test message", isCurrentUser: false, isFirst: true)
-            .previewLayout(.fixed(width: 400, height: 140))
-        MessageView(message: "Can we already say how long their space will take? (Not in it anymore)", isCurrentUser: true, isFirst: true)
-            .previewLayout(.fixed(width: 400, height: 140))
-        MessageView(message: "This is a test message", isCurrentUser: false, isFirst: true)
-            .preferredColorScheme(.dark)
-            .previewLayout(.fixed(width: 400, height: 140))
-        MessageView(message: "This is a test message", isCurrentUser: true, isFirst: true)
-            .preferredColorScheme(.dark)
-            .previewLayout(.fixed(width: 400, height: 140))
-    }
+#Preview("Received") {
+    MessageView(message: "This is a test message", isCurrentUser: false, isFirst: true)
+}
+
+#Preview("Sent") {
+    MessageView(message: "Can we already say how long their space will take?", isCurrentUser: true, isFirst: true)
+}
+
+#Preview("Dark Mode") {
+    MessageView(message: "This is a test message", isCurrentUser: false, isFirst: true)
+        .preferredColorScheme(.dark)
 }

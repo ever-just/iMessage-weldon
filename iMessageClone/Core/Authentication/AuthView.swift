@@ -54,15 +54,15 @@ struct AuthView: View {
                             TextField("Name", text: $name)
                                 .textFieldStyle(AuthTextFieldStyle())
                                 .textContentType(.name)
-                                .autocapitalization(.words)
+                                .textInputAutocapitalization(.words)
                         }
                         
                         TextField("Email", text: $email)
                             .textFieldStyle(AuthTextFieldStyle())
                             .textContentType(.emailAddress)
                             .keyboardType(.emailAddress)
-                            .autocapitalization(.none)
-                            .disableAutocorrection(true)
+                            .textInputAutocapitalization(.never)
+                            .autocorrectionDisabled()
                         
                         SecureField("Password", text: $password)
                             .textFieldStyle(AuthTextFieldStyle())

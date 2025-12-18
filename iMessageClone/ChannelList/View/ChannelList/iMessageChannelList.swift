@@ -63,8 +63,6 @@ struct iMessageChannelList: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        iMessageChannelList(viewFactory: iMessageViewFactory())
-    }
+#Preview {
+    iMessageChannelList(viewFactory: iMessageViewFactory())
 }
