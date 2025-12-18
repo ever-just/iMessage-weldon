@@ -21,6 +21,9 @@ struct AuthView: View {
     @State private var name = ""
     @State private var isLoading = false
     @State private var errorMessage: String?
+    @State private var showForgotPassword = false
+    @State private var forgotPasswordEmail = ""
+    @State private var forgotPasswordMessage: String?
     
     var body: some View {
         NavigationView {
@@ -110,7 +113,8 @@ struct AuthView: View {
                     // Forgot Password (Sign In only)
                     if mode == .signIn {
                         Button {
-                            // TODO: Implement forgot password
+                            forgotPasswordEmail = email
+                            showForgotPassword = true
                         } label: {
                             Text("Forgot Password?")
                                 .font(.footnote)
@@ -122,6 +126,13 @@ struct AuthView: View {
                 }
             }
             .navigationBarHidden(true)
+            .sheet(isPresented: $showForgotPassword) {
+                ForgotPasswordSheet(
+                    email: $forgotPasswordEmail,
+                    message: $forgotPasswordMessage,
+                    isPresented: $showForgotPassword
+                )
+            }
         }
     }
     
@@ -163,6 +174,100 @@ struct AuthTextFieldStyle: TextFieldStyle {
             .padding()
             .background(Color(.systemGray6))
             .cornerRadius(10)
+    }
+}
+
+// MARK: - Forgot Password Sheet
+
+struct ForgotPasswordSheet: View {
+    @Binding var email: String
+    @Binding var message: String?
+    @Binding var isPresented: Bool
+    @State private var isLoading = false
+    
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 24) {
+                Image(systemName: "key.fill")
+                    .font(.system(size: 50))
+                    .foregroundColor(.blue)
+                    .padding(.top, 40)
+                
+                Text("Reset Password")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                
+                Text("Enter your email address and we'll send you a link to reset your password.")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+                
+                TextField("Email", text: $email)
+                    .textFieldStyle(AuthTextFieldStyle())
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .padding(.horizontal, 32)
+                
+                if let message = message {
+                    Text(message)
+                        .font(.footnote)
+                        .foregroundColor(message.contains("sent") ? .green : .red)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                }
+                
+                Button {
+                    sendResetEmail()
+                } label: {
+                    if isLoading {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                    } else {
+                        Text("Send Reset Link")
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(!email.isEmpty ? Color.blue : Color.gray)
+                .foregroundColor(.white)
+                .cornerRadius(12)
+                .disabled(email.isEmpty || isLoading)
+                .padding(.horizontal, 32)
+                
+                Spacer()
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Cancel") {
+                        isPresented = false
+                    }
+                }
+            }
+        }
+    }
+    
+    private func sendResetEmail() {
+        isLoading = true
+        message = nil
+        
+        Task {
+            do {
+                try await supabase.auth.resetPasswordForEmail(email)
+                await MainActor.run {
+                    message = "Password reset link sent! Check your email."
+                    isLoading = false
+                }
+            } catch {
+                await MainActor.run {
+                    message = error.localizedDescription
+                    isLoading = false
+                }
+            }
+        }
     }
 }
 

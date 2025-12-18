@@ -192,7 +192,7 @@ _None identified_
 | 5 | ~~Duplicated sign-out logic~~ | `SignOutButton.swift` extracted | ✅ Fixed |
 | 6 | ~~Outdated REPO_INDEX.md~~ | `docs/REPO_INDEX.md` | ✅ Fixed |
 | 6b | ~~Outdated PRD.md~~ | `docs/PRD.md` | ✅ Fixed |
-| 7 | No automated tests | Project-wide | ⬜ Pending |
+| 7 | ~~No automated tests~~ | `iMessageCloneTests/` added | ✅ Fixed |
 
 ### 🟢 Low Priority / Code Quality
 
@@ -200,10 +200,10 @@ _None identified_
 |---|-------|-------|--------|
 | 8 | ~~Deprecated PreviewProvider~~ | 3 files | ✅ Fixed |
 | 9 | ~~Deprecated autocapitalization~~ | `AuthView.swift` | ✅ Fixed |
-| 10 | Deprecated `onChange` | `StandardUserView.swift` | ⚠️ Kept (iOS 16 compat) |
-| 11 | TODO: Forgot password | `AuthView.swift:113` | ⬜ Pending |
+| 10 | Deprecated `onChange` | `StandardUserView.swift` | ⚠️ Kept (iOS 15 compat) |
+| 11 | ~~TODO: Forgot password~~ | `ForgotPasswordSheet` added | ✅ Fixed |
 | 12 | ~~No scripts README~~ | `scripts/README.md` | ✅ Fixed |
-| 13 | No CI/CD | Project-wide | ⬜ Pending |
+| 13 | ~~No CI/CD~~ | `.github/workflows/build.yml` | ✅ Fixed |
 
 ---
 
@@ -341,13 +341,13 @@ iMessage-weldon/
 
 | # | Task | Details | Status |
 |---|------|---------|--------|
-| 10 | Add XCTest target | Basic auth tests | ⬜ Pending |
-| 11 | Add UI tests | Auth flow, messaging | ⬜ Pending |
-| 12 | Implement forgot password | AuthView TODO | ⬜ Pending |
+| 10 | ~~Add XCTest target~~ | `iMessageCloneTests/` created | ✅ Done |
+| 11 | Add UI tests | Auth flow, messaging | ⬜ Future |
+| 12 | ~~Implement forgot password~~ | `ForgotPasswordSheet` added | ✅ Done |
 | 13 | ~~Set up GitHub Actions CI~~ | Auto-build on PR | ✅ Done |
-| 14 | Restructure to proposed layout | Feature-based organization | ⬜ Pending |
-| 15 | Add token refresh logic | AuthManager enhancement | ⬜ Pending |
-| 16 | Add auth rate limiting | Security hardening | ⬜ Pending |
+| 14 | Restructure to proposed layout | Feature-based organization | ⬜ Future |
+| 15 | Add token refresh logic | AuthManager enhancement | ⬜ Future |
+| 16 | Add auth rate limiting | Security hardening | ⬜ Future |
 
 ---
 

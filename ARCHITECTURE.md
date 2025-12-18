@@ -23,14 +23,16 @@ iMessage-weldon/
 │   │   ├── Authentication/
 │   │   │   ├── AuthManager.swift    # Handles Supabase auth & Stream connection
 │   │   │   ├── AuthView.swift       # Sign-in/sign-up UI
-│   │   │   └── UserSwitcherView.swift
+│   │   │   └── ProfileView.swift    # User profile & sign-out
 │   │   │
 │   │   ├── Views/
 │   │   │   ├── RootView.swift       # Main entry point, routes by auth state
 │   │   │   ├── AdminChannelListView.swift    # Admin's channel list
 │   │   │   ├── StandardUserView.swift        # Standard user's chat view
 │   │   │   ├── StandardUserHeaderModifier.swift
-│   │   │   └── StandardUserChannelInfoView.swift
+│   │   │   ├── StandardUserChannelInfoView.swift
+│   │   │   ├── CustomChannelInfoView.swift   # Channel info with sign-out
+│   │   │   └── SignOutButton.swift           # Shared sign-out component
 │   │   │
 │   │   └── Supabase/
 │   │       └── SupabaseClient.swift  # Supabase client configuration
@@ -162,4 +164,4 @@ static var streamAPIKey: String {
 - **Development Team**: Set in Xcode signing settings
 - **Bundle ID**: `com.weldonmakori.imessageclone`
 - **App Group**: `group.vip.weldon.iMessageClone`
-- **Minimum iOS**: 16.0
+- **Minimum iOS**: 15.2
