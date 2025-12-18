@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		751D83C5020CA99181A6B308 /* SignOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19BD355E402E861F18D8811 /* SignOutButton.swift */; };
 		751D83C5020CA99181A6B307 /* CustomChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19BD355E402E861F18D8810 /* CustomChannelInfoView.swift */; };
+		751D83C5020CA99181A6B308 /* SignOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19BD355E402E861F18D8811 /* SignOutButton.swift */; };
 		8AB042362EECFB8B0000CA85 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042352EECFB8B0000CA85 /* AppConfig.swift */; };
 		8AB042372EECFB8B0000CA86 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042382EECFB8B0000CA86 /* AuthManager.swift */; };
 		8AB042392EECFB8B0000CA87 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB0423A2EECFB8B0000CA87 /* ProfileView.swift */; };
@@ -61,6 +61,7 @@
 		8AB0425B2EECFB8B0000CA9B /* StandardUserHeaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardUserHeaderModifier.swift; sourceTree = "<group>"; };
 		8AB042612EECFB8B0000CA9D /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		8AB042622EECFB8B0000CA9E /* Secrets.template.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.template.plist; sourceTree = "<group>"; };
+		9A017A5B2EF3F47900D8D512 /* iMessageClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iMessageClone.entitlements; sourceTree = "<group>"; };
 		A19BD355E402E861F18D8810 /* CustomChannelInfoView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomChannelInfoView.swift; sourceTree = "<group>"; };
 		A19BD355E402E861F18D8811 /* SignOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutButton.swift; sourceTree = "<group>"; };
 		AC02EB4A27A95CED001C4480 /* iMessageChannelListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageChannelListHeader.swift; sourceTree = "<group>"; };
@@ -236,6 +237,7 @@
 		AC9B379627A46350004765A9 /* iMessageClone */ = {
 			isa = PBXGroup;
 			children = (
+				9A017A5B2EF3F47900D8D512 /* iMessageClone.entitlements */,
 				8AB042412EECFB8B0000CA8B /* Core */,
 				8AB042632EECFB8B0000CA9F /* Config */,
 				ACD129C62857264D007E6B97 /* StreamChat */,
@@ -570,12 +572,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iMessageClone/iMessageClone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iMessageClone/Preview Content\"";
 				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = JustChat;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to send images we need to access them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -587,7 +591,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				INFOPLIST_KEY_CFBundleDisplayName = JustChat;
 				PRODUCT_BUNDLE_IDENTIFIER = app.justchat.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -601,12 +604,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iMessageClone/iMessageClone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iMessageClone/Preview Content\"";
 				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = JustChat;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to send images we need to access them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -618,7 +623,6 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				INFOPLIST_KEY_CFBundleDisplayName = JustChat;
 				PRODUCT_BUNDLE_IDENTIFIER = app.justchat.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
