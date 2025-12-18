@@ -1,8 +1,9 @@
-# Repository Index - iMessage Clone
+# Repository Index - iMessage Clone (weldon.vip)
 
+**Version:** 1.0.0  
+**Last Updated:** December 18, 2024  
 **Based on:** GetStream.io StreamChatSwiftUI SDK  
-**Original Authors:** Stefan Blos, Martin Mitrevski  
-**Purpose:** iMessage-style chat UI built with SwiftUI
+**Purpose:** Private iMessage-style chat app with Supabase authentication
 
 ---
 
@@ -10,17 +11,58 @@
 
 ```
 iMessage-weldon/
+├── iMessageClone/                        # Main iOS app
+│   ├── iMessageCloneApp.swift            # App entry point
+│   ├── Config/
+│   │   ├── AppConfig.swift               # Centralized configuration
+│   │   ├── Secrets.plist                 # API keys (gitignored)
+│   │   └── Secrets.template.plist        # Template for credentials
+│   ├── Core/
+│   │   ├── Authentication/
+│   │   │   ├── AuthManager.swift         # Supabase auth + Stream JWT
+│   │   │   ├── AuthView.swift            # Sign-in/sign-up UI
+│   │   │   └── ProfileView.swift         # User profile & sign-out
+│   │   ├── Supabase/
+│   │   │   └── SupabaseClient.swift      # Supabase client singleton
+│   │   └── Views/
+│   │       ├── RootView.swift            # Main router (auth state)
+│   │       ├── AdminChannelListView.swift
+│   │       ├── StandardUserView.swift
+│   │       ├── StandardUserHeaderModifier.swift
+│   │       ├── StandardUserChannelInfoView.swift
+│   │       └── CustomChannelInfoView.swift
+│   ├── StreamChat/
+│   │   ├── AppDelegate.swift             # Stream client initialization
+│   │   ├── iMessageViewFactory.swift     # Custom ViewFactory
+│   │   ├── iMessageViewFactory+ChannelList.swift
+│   │   └── iMessageViewFactory+MessageList.swift
+│   ├── ChannelList/                      # Admin channel list feature
+│   │   ├── View/
+│   │   │   ├── ChannelHeader/
+│   │   │   ├── ChannelList/
+│   │   │   └── ChannelListItem/
+│   │   └── ViewModel/
+│   ├── MessageList/                      # Message UI feature
+│   │   ├── View/
+│   │   │   ├── Attachments/
+│   │   │   ├── Composer/
+│   │   │   ├── Header/
+│   │   │   └── Message/
+│   │   └── ViewModel/
+│   ├── Assets.xcassets/
+│   └── Preview Content/
+├── scripts/                              # Node.js dev scripts
+│   ├── README.md                         # Script documentation
+│   ├── setup-stream.js
+│   ├── debug-messages.js
+│   ├── register-anon-user.js
+│   └── test-user-interactions.js
 ├── docs/
-│   ├── PRD.md                    # Product requirements & roadmap
-│   └── REPO_INDEX.md             # This file
-├── iMessageClone/
-│   ├── iMessageCloneApp.swift    # App entry point
-│   ├── Assets.xcassets/          # Images, colors, app icon
-│   ├── Preview Content/          # SwiftUI preview assets
-│   ├── ChannelList/              # Channel list feature
-│   ├── MessageList/              # Message list feature
-│   └── StreamChat/               # Stream SDK integration
-└── iMessageClone.xcodeproj/      # Xcode project file
+│   ├── PRD.md                            # Product requirements
+│   └── REPO_INDEX.md                     # This file
+├── ARCHITECTURE.md                       # Architecture documentation
+├── AUDIT_PLAN.md                         # Repository audit & implementation plan
+└── README.md                             # Setup instructions
 ```
 
 ---
@@ -31,15 +73,40 @@ iMessage-weldon/
 
 | File | Purpose |
 |------|---------|
-| `iMessageCloneApp.swift` | Main app struct, initializes `iMessageChannelList` |
-| `StreamChat/AppDelegate.swift` | Stream SDK initialization, user connection |
+| `iMessageCloneApp.swift` | Main app struct, loads `RootView` |
+| `StreamChat/AppDelegate.swift` | Stream SDK initialization |
+
+### Configuration (`Config/`)
+
+| File | Purpose |
+|------|---------|
+| `AppConfig.swift` | Loads credentials from Secrets.plist |
+| `Secrets.plist` | API keys (gitignored - never commit) |
+| `Secrets.template.plist` | Template for other developers |
+
+### Authentication (`Core/Authentication/`)
+
+| File | Purpose |
+|------|---------|
+| `AuthManager.swift` | Supabase auth, Stream JWT generation, user state |
+| `AuthView.swift` | Sign-in/sign-up form UI |
+| `ProfileView.swift` | User profile display and sign-out |
+
+### Core Views (`Core/Views/`)
+
+| File | Purpose |
+|------|---------|
+| `RootView.swift` | Routes to Auth/Admin/Standard views based on state |
+| `AdminChannelListView.swift` | Admin sees all user channels |
+| `StandardUserView.swift` | Standard user sees single DM with admin |
+| `CustomChannelInfoView.swift` | Channel info sheet with sign-out |
 
 ### Stream SDK Integration (`StreamChat/`)
 
 | File | Purpose |
 |------|---------|
-| `AppDelegate.swift` | Configures `ChatClient`, connects demo user |
-| `iMessageViewFactory.swift` | Custom `ViewFactory` for UI customization |
+| `AppDelegate.swift` | Configures `ChatClient` with API key |
+| `iMessageViewFactory.swift` | Custom `ViewFactory` + `StandardUserViewFactory` |
 | `iMessageViewFactory+ChannelList.swift` | Channel list customizations |
 | `iMessageViewFactory+MessageList.swift` | Message list customizations |
 
@@ -47,7 +114,7 @@ iMessage-weldon/
 
 | File | Purpose |
 |------|---------|
-| `View/ChannelList/iMessageChannelList.swift` | Main channel list view with navigation |
+| `View/ChannelList/iMessageChannelList.swift` | Main channel list with pinned channels |
 | `View/ChannelList/PinnedChannelsView.swift` | Horizontal scrolling pinned channels |
 | `View/ChannelList/LeadingSwipeAreaView.swift` | Pin action on swipe |
 | `View/ChannelList/TrailingSwipeAreaView.swift` | Mute/delete actions on swipe |
@@ -73,17 +140,20 @@ iMessage-weldon/
 
 ## Current Configuration
 
-### Stream API (Demo)
-```swift
-// AppDelegate.swift - REPLACE WITH YOUR OWN KEY
-apiKey: "8br4watad788"  // Demo key - DO NOT USE IN PRODUCTION
-```
+### Credentials (Secrets.plist)
+Credentials are loaded from `Config/Secrets.plist` (gitignored):
+- `SupabaseURL` - Supabase project URL
+- `SupabaseAnonKey` - Supabase anonymous key
+- `StreamAPIKey` - Stream Chat API key
+- `StreamAppId` - Stream App ID
+- `StreamAPISecret` - Stream API secret (for JWT generation)
 
-### Demo User (Replace)
+### User Types
 ```swift
-// Current hardcoded user - MUST BE REPLACED
-userId: "luke_skywalker"
-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+enum UserType {
+    case admin      // weldon_admin - sees all channels
+    case standard   // Regular users - single DM with admin
+}
 ```
 
 ---
@@ -95,12 +165,13 @@ token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 |---------|---------|
 | `StreamChat` | Core chat SDK |
 | `StreamChatSwiftUI` | SwiftUI components |
+| `Supabase` | Authentication |
 | `OrderedCollections` | Ordered sets for pinned channels |
 
 ### Required iOS Capabilities
 - Background Modes (remote notifications)
 - Push Notifications
-- Keychain Sharing (if using app groups)
+- App Groups (`group.vip.weldon.iMessageClone`)
 
 ---
 
@@ -111,88 +182,48 @@ token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 - **Received:** Gray background (secondarySystemBackground), primary text, left-aligned
 - **Tail:** Custom images (`outgoingTail`, `incomingTail`) for first message in group
 
-### Channel List
+### Channel List (Admin Only)
 - **Pinned Channels:** Horizontal scroll at top with avatars
 - **Regular Channels:** Vertical list with swipe actions
 - **Swipe Left (Leading):** Pin/Unpin
 - **Swipe Right (Trailing):** Mute, Delete
 
----
-
-## What Needs to Change for Weldon App
-
-### 1. Authentication Layer (NEW)
-```
-Core/Authentication/
-├── AuthManager.swift          # Manages auth state
-├── AnonymousAuthProvider.swift # Device-based anonymous ID
-└── AppleSignInProvider.swift   # Sign in with Apple
-```
-
-### 2. User Role System (NEW)
-```swift
-enum UserRole {
-    case admin      // Weldon - sees all channels
-    case standard   // Regular users - sees only their DM
-}
-```
-
-### 3. Channel Access Control (MODIFY)
-- **Admin View:** Show all channels (existing behavior)
-- **Standard View:** Single channel to admin only
-
-### 4. Profile/Settings Screens (NEW)
-```
-Features/Profile/
-├── View/ProfileView.swift
-├── View/SignInView.swift
-└── ViewModel/ProfileViewModel.swift
-```
-
-### 5. App Configuration (NEW)
-```swift
-// Replace hardcoded values
-enum AppConfig {
-    static let streamAPIKey = "YOUR_KEY"
-    static let adminUserId = "weldon_admin"
-}
-```
+### Standard User View
+- Single chat view with admin (no channel list)
+- Simplified header with "Weldon" name
+- Custom info sheet with sign-out option
 
 ---
 
-## Quick Start for Development
+## Implementation Status ✅
 
-### 1. Get Stream API Key
-1. Go to [dashboard.getstream.io](https://dashboard.getstream.io)
-2. Create new app or use existing
-3. Copy API Key and Secret
+All core features have been implemented:
 
-### 2. Update AppDelegate
-```swift
-// Replace demo key
-ChatClientConfig(apiKey: .init("YOUR_API_KEY"))
+- [x] **Authentication Layer** - Supabase email/password auth
+- [x] **User Role System** - Admin vs Standard user detection
+- [x] **Channel Access Control** - Admin sees all, users see single DM
+- [x] **Profile/Sign-out** - ProfileView with sign-out functionality
+- [x] **App Configuration** - Centralized AppConfig with Secrets.plist
 
-// Replace demo user with dynamic auth
-connectUser(userId: currentUserId, token: generatedToken)
-```
+---
 
-### 3. Run the App
-```bash
-open iMessageClone.xcodeproj
-# Select simulator or device
-# Build & Run (Cmd + R)
-```
+## Quick Start
+
+1. Copy `Config/Secrets.template.plist` to `Config/Secrets.plist`
+2. Fill in your Supabase and Stream credentials
+3. Open `iMessageClone.xcodeproj`
+4. Build & Run (⌘R)
+
+See [README.md](../README.md) for detailed setup instructions.
 
 ---
 
 ## Related Resources
 
 - [StreamChatSwiftUI GitHub](https://github.com/GetStream/stream-chat-swiftui)
-- [SwiftUI Chat Tutorial](https://getstream.io/tutorials/swiftui-chat/)
 - [Stream iOS Docs](https://getstream.io/chat/docs/sdk/ios/swiftui/)
-- [YouTube: Channel List Tutorial](https://youtu.be/526swCwDMX8)
-- [YouTube: Message List Tutorial](https://youtu.be/8Nkmk85H8HQ)
+- [Supabase Swift Docs](https://supabase.com/docs/reference/swift/introduction)
 
 ---
 
-*Index generated for iMessage-Weldon project development.*
+*Last updated: December 18, 2024*
