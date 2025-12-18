@@ -344,7 +344,7 @@ iMessage-weldon/
 | 10 | Add XCTest target | Basic auth tests | ⬜ Pending |
 | 11 | Add UI tests | Auth flow, messaging | ⬜ Pending |
 | 12 | Implement forgot password | AuthView TODO | ⬜ Pending |
-| 13 | Set up GitHub Actions CI | Auto-build on PR | ⬜ Pending |
+| 13 | ~~Set up GitHub Actions CI~~ | Auto-build on PR | ✅ Done |
 | 14 | Restructure to proposed layout | Feature-based organization | ⬜ Pending |
 | 15 | Add token refresh logic | AuthManager enhancement | ⬜ Pending |
 | 16 | Add auth rate limiting | Security hardening | ⬜ Pending |
