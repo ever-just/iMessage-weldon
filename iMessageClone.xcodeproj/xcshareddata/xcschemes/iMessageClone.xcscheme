@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AC9B379327A46350004765A9"
-               BuildableName = "JustChat.app"
+               BuildableName = "WELDON.VIP.app"
                BlueprintName = "iMessageClone"
                ReferencedContainer = "container:iMessageClone.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC9B379327A46350004765A9"
-            BuildableName = "JustChat.app"
+            BuildableName = "WELDON.VIP.app"
             BlueprintName = "iMessageClone"
             ReferencedContainer = "container:iMessageClone.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC9B379327A46350004765A9"
-            BuildableName = "JustChat.app"
+            BuildableName = "WELDON.VIP.app"
             BlueprintName = "iMessageClone"
             ReferencedContainer = "container:iMessageClone.xcodeproj">
          </BuildableReference>

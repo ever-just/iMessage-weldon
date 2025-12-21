@@ -1,6 +1,6 @@
 # Architecture & Repository Structure
 
-This document describes the design and structure of the iMessage Clone project.
+This document describes the design and structure of the WELDON.VIP project.
 
 ## Overview
 

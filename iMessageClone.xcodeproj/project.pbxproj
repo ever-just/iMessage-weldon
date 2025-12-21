@@ -579,7 +579,7 @@
 				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = JustChat;
+				INFOPLIST_KEY_CFBundleDisplayName = "WELDON.VIP";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to send images we need to access them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -592,7 +592,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.justchat.ios;
-				PRODUCT_NAME = JustChat;
+				PRODUCT_NAME = "WELDON.VIP";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -611,7 +611,7 @@
 				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = JustChat;
+				INFOPLIST_KEY_CFBundleDisplayName = "WELDON.VIP";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to send images we need to access them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -624,7 +624,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.justchat.ios;
-				PRODUCT_NAME = JustChat;
+				PRODUCT_NAME = "WELDON.VIP";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

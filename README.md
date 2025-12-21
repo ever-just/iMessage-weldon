@@ -1,4 +1,4 @@
-# JustChat
+# WELDON.VIP
 
 A private iMessage-style chat application built with SwiftUI and Stream Chat SDK, featuring Supabase authentication. Enables direct messaging between an admin and standard users with a native iOS messaging experience.
 
