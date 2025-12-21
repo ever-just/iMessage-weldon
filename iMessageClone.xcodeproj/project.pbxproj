@@ -301,6 +301,7 @@
 		ACD129C7285727B4007E6B97 /* ChannelList */ = {
 			isa = PBXGroup;
 			children = (
+				A19BD355E402E861F18D8809 /* CreateChannelView.swift */,
 				AC9B379927A46350004765A9 /* iMessageChannelList.swift */,
 				AC5277E227AC29010065A092 /* LeadingSwipeAreaView.swift */,
 				AC4A633B27AC473F00237420 /* PinnedChannelsView.swift */,
