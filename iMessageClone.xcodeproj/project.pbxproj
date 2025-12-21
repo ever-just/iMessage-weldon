@@ -81,7 +81,7 @@
 		AC65D065286C5D9F00E01779 /* MessageListHeaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListHeaderModifier.swift; sourceTree = "<group>"; };
 		AC65D067286C5F3700E01779 /* iMessageViewFactory+MessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iMessageViewFactory+MessageList.swift"; sourceTree = "<group>"; };
 		AC65D06A286C73DF00E01779 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		AC9B379427A46350004765A9 /* iMessageClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMessageClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC9B379427A46350004765A9 /* iMessageClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = iMessageClone.app; path = WELDON.VIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9B379727A46350004765A9 /* iMessageCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageCloneApp.swift; sourceTree = "<group>"; };
 		AC9B379927A46350004765A9 /* iMessageChannelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageChannelList.swift; sourceTree = "<group>"; };
 		AC9B379B27A46351004765A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -579,7 +579,7 @@
 				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "WELDON.VIP";
+				INFOPLIST_KEY_CFBundleDisplayName = WELDON.VIP;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to take and send photos in your messages.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to send images we need to access them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -593,7 +593,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vip.weldon.app;
-				PRODUCT_NAME = "WELDON.VIP";
+				PRODUCT_NAME = WELDON.VIP;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -612,7 +612,7 @@
 				DEVELOPMENT_TEAM = 8769U6225R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "WELDON.VIP";
+				INFOPLIST_KEY_CFBundleDisplayName = WELDON.VIP;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera access to take and send photos in your messages.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "In order to send images we need to access them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -626,7 +626,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vip.weldon.app;
-				PRODUCT_NAME = "WELDON.VIP";
+				PRODUCT_NAME = WELDON.VIP;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -55,3 +55,12 @@ cat > "$SECRETS_PATH" << EOF
 EOF
 
 echo "✅ Secrets.plist generated successfully at $SECRETS_PATH"
+
+# Verify the file was created
+if [ ! -f "$SECRETS_PATH" ]; then
+    echo "❌ Error: Secrets.plist was not created"
+    exit 1
+fi
+
+echo "📄 Secrets.plist contents:"
+cat "$SECRETS_PATH"
