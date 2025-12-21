@@ -14,7 +14,7 @@ struct CreateChannelView: View {
     @Injected(\.chatClient) var chatClient: ChatClient
     
     @State private var channelName = ""
-    @State private var selectedUsers: Set<ChatUser> = []
+    @State private var selectedUserIds: Set<String> = []
     @State private var searchText = ""
     @State private var isCreating = false
     @State private var errorMessage: String?
@@ -40,13 +40,13 @@ struct CreateChannelView: View {
                         TextField("Search users by name or ID", text: $searchText)
                             .textInputAutocapitalization(.never)
                         
-                        if !selectedUsers.isEmpty {
-                            ForEach(Array(selectedUsers), id: \.id) { user in
+                        if !selectedUserIds.isEmpty {
+                            ForEach(Array(selectedUserIds), id: \.self) { userId in
                                 HStack {
-                                    Text(user.name ?? user.id)
+                                    Text(userId)
                                     Spacer()
                                     Button {
-                                        selectedUsers.remove(user)
+                                        selectedUserIds.remove(userId)
                                     } label: {
                                         Image(systemName: "xmark.circle.fill")
                                             .foregroundColor(.gray)
@@ -80,7 +80,7 @@ struct CreateChannelView: View {
                     Button("Create") {
                         createChannel()
                     }
-                    .disabled(channelName.isEmpty || selectedUsers.isEmpty || isCreating)
+                    .disabled(channelName.isEmpty || selectedUserIds.isEmpty || isCreating)
                 }
             }
         }
@@ -91,8 +91,7 @@ struct CreateChannelView: View {
         
         guard !userId.isEmpty else { return }
         
-        let user = ChatUser(id: userId)
-        selectedUsers.insert(user)
+        selectedUserIds.insert(userId)
         searchText = ""
     }
     
@@ -105,13 +104,11 @@ struct CreateChannelView: View {
             id: UUID().uuidString
         )
         
-        let memberIds = Array(selectedUsers.map { $0.id })
-        
         do {
             let controller = try chatClient.channelController(
                 createChannelWithId: channelId,
                 name: channelName,
-                members: memberIds,
+                members: selectedUserIds,
                 isCurrentUserMember: true
             )
             

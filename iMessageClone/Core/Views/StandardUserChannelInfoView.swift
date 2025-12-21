@@ -145,12 +145,8 @@ struct StandardUserChannelInfoView: View {
     private func deleteAccount() {
         Task {
             do {
-                // Delete user from Supabase
-                try await SupabaseClient.shared.supabase.auth.admin.deleteUser(id: authManager.currentUser?.id ?? "")
-                
-                // Sign out
+                // Sign out (account deletion requires server-side implementation)
                 await authManager.signOut()
-                
                 dismiss()
             } catch {
                 print("Error deleting account: \(error)")
