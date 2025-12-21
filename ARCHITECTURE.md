@@ -162,6 +162,6 @@ static var streamAPIKey: String {
 ## Build Configuration
 
 - **Development Team**: Set in Xcode signing settings
-- **Bundle ID**: `app.justchat.ios`
-- **App Group**: `group.app.justchat`
+- **Bundle ID**: `vip.weldon.app`
+- **App Group**: `group.vip.weldon`
 - **Minimum iOS**: 15.2

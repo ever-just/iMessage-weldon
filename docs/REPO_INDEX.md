@@ -171,7 +171,7 @@ enum UserType {
 ### Required iOS Capabilities
 - Background Modes (remote notifications)
 - Push Notifications
-- App Groups (`group.app.justchat`)
+- App Groups (`group.vip.weldon`)
 
 ---
 
