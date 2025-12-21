@@ -53,7 +53,7 @@ struct StandardUserHeaderModifier: ChatChannelHeaderViewModifier {
             }
         }
         .sheet(isPresented: $infoScreenShown) {
-            CustomChannelInfoView(channel: channel)
+            StandardUserChannelInfoView(channel: channel)
         }
     }
 }
