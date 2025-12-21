@@ -17,6 +17,11 @@ let supabase: SupabaseClient = {
     }
     return SupabaseClient(
         supabaseURL: url,
-        supabaseKey: AppConfig.supabaseAnonKey
+        supabaseKey: AppConfig.supabaseAnonKey,
+        options: SupabaseClientOptions(
+            auth: SupabaseClientOptions.AuthOptions(
+                emitLocalSessionAsInitialSession: true
+            )
+        )
     )
 }()
