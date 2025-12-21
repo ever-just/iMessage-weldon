@@ -1,6 +1,8 @@
-# iMessage Clone - Weldon.vip
+# JustChat
 
-A private iMessage-style chat application built with SwiftUI and Stream Chat SDK, featuring Supabase authentication. This app enables direct messaging between an admin (Weldon) and standard users with a native iOS messaging experience.
+A private iMessage-style chat application built with SwiftUI and Stream Chat SDK, featuring Supabase authentication. Enables direct messaging between an admin and standard users with a native iOS messaging experience.
+
+**Bundle ID:** `app.justchat.ios`
 
 ## Features
 
@@ -25,7 +27,7 @@ A private iMessage-style chat application built with SwiftUI and Stream Chat SDK
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/iMessage-weldon.git
+git clone https://github.com/ever-just/iMessage-weldon.git
 cd iMessage-weldon
 ```
 
@@ -95,9 +97,27 @@ Select your target device/simulator and press ⌘R.
 - [Supabase Swift](https://github.com/supabase/supabase-swift) - Authentication
 - [OrderedCollections](https://github.com/apple/swift-collections) - Pinned channels support
 
+## Project Structure
+
+```
+iMessageClone/
+├── Config/                 # App configuration & secrets
+│   ├── AppConfig.swift     # Centralized config loader
+│   ├── Secrets.plist       # Your credentials (gitignored)
+│   └── Secrets.template.plist
+├── Core/                   # App-specific code
+│   ├── Authentication/     # Auth views & manager
+│   ├── Supabase/           # Supabase client
+│   └── Views/              # Shared UI components
+├── ChannelList/            # Stream Chat channel list customization
+├── MessageList/            # Stream Chat message list customization
+├── StreamChat/             # Stream SDK setup & view factory
+└── Assets.xcassets/        # App icons & images
+```
+
 ## Architecture
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed information about the project structure and design.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed design documentation.
 
 ## License
 
