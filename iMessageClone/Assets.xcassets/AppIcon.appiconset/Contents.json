@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "iPhone-Notification-40.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
@@ -18,6 +19,7 @@
       "size" : "29x29"
     },
     {
+      "filename" : "iPhone-Settings-87.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
@@ -47,16 +49,19 @@
       "size" : "60x60"
     },
     {
+      "filename" : "iPad-Notification-20.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
+      "filename" : "iPhone-Notification-40.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "iPad-Settings-29.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
@@ -68,6 +73,7 @@
       "size" : "29x29"
     },
     {
+      "filename" : "iPad-Spotlight-40.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"

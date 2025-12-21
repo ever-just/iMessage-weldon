@@ -55,6 +55,7 @@ class AuthManager: ObservableObject {
     static let adminStreamId = "weldon_admin"
     
     private init() {
+        isLoading = true
         Task {
             await checkExistingSession()
         }
@@ -203,11 +204,13 @@ class AuthManager: ObservableObject {
             await MainActor.run {
                 self.currentUser = user
                 self.isAuthenticated = true
+                self.isLoading = false
             }
         } catch {
             // No existing session or session expired
             await MainActor.run {
                 self.isAuthenticated = false
+                self.isLoading = false
             }
         }
     }

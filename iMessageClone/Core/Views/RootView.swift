@@ -11,11 +11,10 @@ import StreamChatSwiftUI
 
 struct RootView: View {
     @StateObject var authManager = AuthManager.shared
-    @State private var isInitializing = true
     
     var body: some View {
         Group {
-            if isInitializing {
+            if authManager.isLoading {
                 LaunchView()
             } else if !authManager.isAuthenticated {
                 AuthView()
@@ -23,12 +22,6 @@ struct RootView: View {
                 AdminChannelListView()
             } else {
                 StandardUserView()
-            }
-        }
-        .onAppear {
-            // Give Supabase a moment to check existing session
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                isInitializing = false
             }
         }
     }

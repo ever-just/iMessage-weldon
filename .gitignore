@@ -87,3 +87,6 @@ Secrets.plist
 iMessageClone/Config/Secrets.plist
 
 node_modules/
+
+# Local Netlify folder
+.netlify
