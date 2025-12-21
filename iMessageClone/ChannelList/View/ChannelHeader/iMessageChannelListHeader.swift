@@ -6,21 +6,25 @@
 //
 
 import SwiftUI
+import StreamChatSwiftUI
 
 struct iMessageChannelListHeader: ToolbarContent {
+    
+    @Binding var isEditing: Bool
+    @Binding var showCreateChannel: Bool
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
             Button {
-                // TBD
+                isEditing.toggle()
             } label: {
-                Text("Edit")
+                Text(isEditing ? "Done" : "Edit")
             }
         }
         
         ToolbarItem(placement: .navigationBarTrailing) {
             Button {
-                // TBD
+                showCreateChannel = true
             } label: {
                 Image(systemName: "square.and.pencil")
             }

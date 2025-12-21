@@ -12,6 +12,8 @@ struct iMessageChannelList: View {
     
     @StateObject var viewModel = iMessageChannelListViewModel()
     @StateObject var channelHeaderLoader = ChannelHeaderLoader()
+    @State private var isEditing = false
+    @State private var showCreateChannel = false
     var viewFactory: iMessageViewFactory
     
     var body: some View {
@@ -54,10 +56,14 @@ struct iMessageChannelList: View {
                             return Alert.defaultErrorAlert
                         }
                     }
-                    .navigationTitle("Messages")
+                    .navigationTitle("WELDON")
                     .toolbar {
-                        iMessageChannelListHeader()
+                        iMessageChannelListHeader(isEditing: $isEditing, showCreateChannel: $showCreateChannel)
                     }
+                    .environment(\.editMode, isEditing ? .constant(.active) : .constant(.inactive))
+            }
+            .sheet(isPresented: $showCreateChannel) {
+                CreateChannelView()
             }
         }
     }
