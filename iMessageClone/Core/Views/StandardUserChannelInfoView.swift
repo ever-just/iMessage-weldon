@@ -144,12 +144,10 @@ struct StandardUserChannelInfoView: View {
     
     private func deleteAccount() {
         Task {
-            do {
-                // Sign out (account deletion requires server-side implementation)
-                await authManager.signOut()
+            // Sign out (account deletion requires server-side implementation)
+            await authManager.signOut()
+            await MainActor.run {
                 dismiss()
-            } catch {
-                print("Error deleting account: \(error)")
             }
         }
     }
