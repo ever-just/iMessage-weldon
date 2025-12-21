@@ -13,8 +13,6 @@ struct iMessageChannelListHeaderModifier: ChannelListHeaderViewModifier {
     var title: String
     
     func body(content: Content) -> some View {
-        content.toolbar {
-            iMessageChannelListHeader()
-        }
+        content
     }
 }

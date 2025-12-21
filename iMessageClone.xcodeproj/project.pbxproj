@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751D83C5020CA99181A6B306 /* CreateChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19BD355E402E861F18D8809 /* CreateChannelView.swift */; };
 		751D83C5020CA99181A6B307 /* CustomChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19BD355E402E861F18D8810 /* CustomChannelInfoView.swift */; };
 		751D83C5020CA99181A6B308 /* SignOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19BD355E402E861F18D8811 /* SignOutButton.swift */; };
 		8AB042362EECFB8B0000CA85 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB042352EECFB8B0000CA85 /* AppConfig.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		8AB042352EECFB8B0000CA85 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		A19BD355E402E861F18D8809 /* CreateChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelView.swift; sourceTree = "<group>"; };
 		8AB042382EECFB8B0000CA86 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		8AB0423A2EECFB8B0000CA87 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8AB0423C2EECFB8B0000CA88 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751D83C5020CA99181A6B306 /* CreateChannelView.swift in Sources */,
 				8AB042582EECFB8B0000CA98 /* StandardUserChannelInfoView.swift in Sources */,
 				8AB0425A2EECFB8B0000CA9A /* StandardUserHeaderModifier.swift in Sources */,
 				8AB042532EECFB8B0000CA93 /* SupabaseClient.swift in Sources */,
